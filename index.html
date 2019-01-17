@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Beginner's guide to anime</title>
+  <meta charset="utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="anime, guide, beginner, progress">
+  <meta name="description" content="introductory guide for people new to anime featuring a progress system">
+  <link rel="stylesheet" type="text/css" href="css/mainstylesheet.css">
+  <link rel="icon" type="image/png" href="images/siteicon.png" title="pokemon by anbileru adaleru from the Noun Project">
+
+  <script src="js/thescript.js"></script>
+</head>
+
+<body id="mainpage" onload="updatecheckonload()">
+
+  <header>
+
+    <nav>
+
+      <img class="navtext" src="images/navigationbuttonwhite.png" alt="a navigation bar button" title="navigation by Karen Tyler from the Noun Project" onclick="changeButtonState()">
+      <img class="navtext" src="images/navbaricon.png" alt="decorative title icon for navbar">
+      <a class="navtext" href="#mainpage" onclick="changeButtonState(this)">Main Page</a>
+      <a class="navtext" href="#glossary" onclick="changeButtonState(this)">Glossary</a>
+      <nav id="genresdropdown">Genres
+        <a href="#action" onclick="changeButtonState(this)">Action</a>
+        <a href="#mecha" onclick="changeButtonState(this)">Mecha</a>
+        <a href="#romance" onclick="changeButtonState(this)">Romance</a>
+      </nav>
+      <a class="navtext" href="#aboutme" onclick="changeButtonState(this)">About Me</a>
+
+
+
+    </nav>
+
+    <h1>A Beginner's Guide to Anime / An Anime Recommendation list</h1>
+    <div>A introductory site to the world of anime and listing of a few great animes to start with through various genres</div>
+    <div>
+      Your progress<br>
+      <progress id="overallprogress" value="0" max="100">0%</progress>
+    </div>
+    <!-- <img class="scrollarrow" src="images/scrollarrow.png" alt="decorative scroll arrow" title="Arrow by AdbA Icons ❤️ from the Noun Project"  /> -->
+
+  </header>
+
+  <main>
+
+    <section id="glossary">
+
+
+        <h2>Glossary of terms that will make you a glorified otaku weeb</h2>
+        <div class="popup" onclick="displaydahoverlay(this)">Personalities</div>
+        <div class="glossaryoverlay">
+          <h3>Personality terms</h3>
+
+          <ul>
+            <li>Tsundere - characters which display hostility and/or apathy but gradually becomes more amiable</li>
+            <li>Yandere - normally loving and amiable but occasionally displays episodes of psychotic, violent behaviour</li>
+            <li>Deredere - amiable with everyone, sometimes overly so</li>
+            <li>Kuudere - cold, emotionally distant and logical</li>
+            <li>Dandere - Shy and reserved, only talkative to those close to them</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+        <div class="popup" onclick="displaydahoverlay(this)">Genres</div>
+        <div class="glossaryoverlay">
+          <h3>Genre terms</h3>
+
+          <ul>
+            <li>Shounen - stuff aimed at teenage males</li>
+            <li>Shoujo - stuff aimed at teenage females</li>
+            <li>Seinen/Josei - stuff aimed at male and female adults respectively</li>
+            <li>Ecchi - all things remotely pornographic</li>
+            <li>Hentai - all things blatantly pornographic</li>
+            <li>Mecha - lots of robots</li>
+            <li>Yuri/Yaoi - female-female and male-male relationships involved, respectively</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+        <div class="popup" onclick="displaydahoverlay(this)">Honorifics</div>
+        <div class="glossaryoverlay">
+          <h3>Honorifics<sub>(suffixes)</sub></h3>
+
+          <ul>
+            <li>San - the most common formal honorific, roughly equivalent to calling someone Mr./Mrs.</li>
+            <li>Sama - highest honorific, usually used to address deities and royalty. Also commonly heard in maid animes when the character addresses their master. Sometimes used mockingly to spite a ignorant person.</li>
+            <li>Chan - informal female honorific, commonly used for children, amongst family members</li>
+            <li>Kun - male version of Chan</li>
+            <li>Sensei - honorific for teachers / educators</li>
+            <li>Senpai - honorific used for seniors in many places</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+        <div class="popup" onclick="displaydahoverlay(this)">Characters</div>
+        <div class="glossaryoverlay">
+          <h3>Character types</h3>
+
+          <ul>
+            <li>Bishoujo/Bishounen - the stereotypical (at least in anime sense) attractve female and male</li>
+            <li>Baka - dummy</li>
+            <li>Loli - petite characters with a small build</li>
+            <li>Petanko - Lolis with a flat chest</li>
+            <li>Moe - irresistably cute</li>
+            <li>Megane - stereotypical nerd with glasses character</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+        <div class="popup" onclick="displaydahoverlay(this)">Anime related</div>
+        <div class="glossaryoverlay">
+          <h3>Anime-related terms</h3>
+
+          <ul>
+            <li>Season - usually a sequence of 13 / 24 episodes in the current meta</li>
+            <li>Dub - anime with a different voice track language (not recommended)</li>
+            <li>FanSub - subtitles made by fans, not to be used for profit</li>
+            <li>Ova - one or several episodes of animation to provide side stories / alternate routes to a main anime, or something remotely related</li>
+            <li>Doujin(manga) - the term for the manga version of Doujins</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+        <div class="popup" onclick="displaydahoverlay(this)">Others</div>
+        <div class="glossaryoverlay">
+          <h3>Random Snippets</h3>
+
+          <ul>
+            <li>Kawaii - cute</li>
+            <li>Otaku - anime culture nerd</li>
+            <li>Itadakimasu - remark meaning "let's eat!"</li>
+            <li>Arigato - Thank You</li>
+            <li>Ohayo - Good morning</li>
+          </ul>
+
+          <div onclick="exitdahoverlay()" class="overlayexit">
+            <img src="images/backbutton.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+          </div>
+        </div>
+
+
+    </section>
+
+    <section id="action" class="genres">
+      <h2>Action Adventure Anime</h2>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/sao.jpg" alt="thumbnail image of sword art online anime" title="sword art online by a-1 pictures" /><span>Sword Art Online</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/sao.jpg" alt="thumbnail image of sword art online anime" title="sword art online by a-1 pictures" />
+        <h3>Sword Art Online</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/11757/Sword_Art_Online">
+              <p>In the year 2022, virtual reality has progressed by leaps and bounds, and a massive online role-playing game called Sword Art Online (SAO) is launched. With the aid of "NerveGear" technology, players can control their avatars within the game using nothing but their own thoughts.</p>
+              <p>Kazuto Kirigaya, nicknamed "Kirito," is among the lucky few enthusiasts who get their hands on the first shipment of the game. He logs in to find himself, with ten-thousand others, in the scenic and elaborate world of Aincrad, one full of fantastic medieval weapons and gruesome monsters. However, in a cruel turn of events, the players soon realize they cannot log out; the game's creator has trapped them in his new world until they complete all one hundred levels of the game.
+In order to escape Aincrad, Kirito will now have to interact and cooperate with his fellow players. Some are allies, while others are foes, like Asuna Yuuki, who commands the leading group attempting to escape from the ruthless game. To make matters worse, Sword Art Online is not all fun and games: if they die in Aincrad, they die in real life. Kirito must adapt to his new reality, fight for his survival, and hopefully break free from his virtual hell.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Despite the many negative opnions about it being overrated, I still think it is a great anime (lest you watch season 2). The first anime to suck me back into the world of anime after a 10 year hiatus from the era of pokemon / digimon.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/fmab.png" alt="thumbnail image of fullmetal alchemist brotherhood anime" title="fullmetal alchemist brotherhood thumbnail iamge by Bones studios" /><span>Fullmetal Alchemist Brotherhood</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/fmab.png" alt="thumbnail image of fullmetal alchemist brotherhood anime" title="fullmetal alchemist brotherhood thumbnail iamge by Bones studios" />
+        <h3>Fullmetal Alchemist Brotherhood</h3>
+
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood?q=full">
+              <p>"In order for something to be obtained, something of equal value must be lost."</p>
+              <p>Alchemy is bound by this Law of Equivalent Exchange—something the young brothers Edward and Alphonse Elric only realize after attempting human transmutation: the one forbidden act of alchemy. They pay a terrible price for their transgression—Edward loses his left leg, Alphonse his physical body. It is only by the desperate sacrifice of Edward's right arm that he is able to affix Alphonse's soul to a suit of armor. Devastated and alone, it is the hope that they would both eventually return to their original bodies that gives Edward the inspiration to obtain metal limbs called "automail" and become a state alchemist, the Fullmetal Alchemist.</p>
+              <p>Three years of searching later, the brothers seek the Philosopher's Stone, a mythical relic that allows an alchemist to overcome the Law of Equivalent Exchange. Even with military allies Colonel Roy Mustang, Lieutenant Riza Hawkeye, and Lieutenant Colonel Maes Hughes on their side, the brothers find themselves caught up in a nationwide conspiracy that leads them not only to the true nature of the elusive Philosopher's Stone, but their country's murky history as well. In between finding a serial killer and racing against time, Edward and Alphonse must ask themselves if what they are doing will make them human again... or take away their humanity.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>One of my first few animes after sword art online that was recommended to me. Amazing plot material, characters and presentation (for its time) set in fantasy world.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/magi.png" alt="thumbnail image of magi anime" title="Magi thumbnail by a-1 pictures" /><span>Magi</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/magi.png" alt="thumbnail image of magi anime" title="Magi thumbnail by a-1 pictures" />
+        <h3>Magi</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/14513/Magi__The_Labyrinth_of_Magic">
+              <p>Dispersed around the world, there are several bizarre labyrinths hiding incredible treasures within them. These mysterious places, known as "Dungeons," are said to be the work of Magi, a class of rare magicians, who also help people build their empires by guiding them to a dungeon. Djinns, supernatural beings that rule over the labyrinths, grant successful conquerors access to their immense power and choose them as potential king candidates to rule the world.</p>
+              <p>Having spent life in isolation, Aladdin, a kind and young magician, is eager to explore the world upon finally leaving his home behind. He begins his journey only accompanied by his mentor Ugo—a djinn that Aladdin can summon with his flute. However, Aladdin soon becomes friends with the courageous Alibaba Saluja after causing the destruction of a local merchant's supply cart. In order to pay for the damages, Alibaba suggests that they attempt to conquer the nearest dungeon, taking the first step in an epic adventure that will decide the fate of the world itself.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Amazing anime featuring magic, magic and more magic. Oh and a great amazing plot</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/deepinabyss.jpg" alt="thumbnail image of made in abyss anime" title="Made in Abyss by Kinema Citrus" /><span>Made in Abyss</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/deepinabyss.jpg" alt="thumbnail image of made in abyss anime" title="Made in Abyss by Kinema Citrus" />
+        <h3>Made in Abyss</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/11757/Sword_Art_Online">
+              <p>The Abyss—a gaping chasm stretching down into the depths of the earth, filled with mysterious creatures and relics from a time long past. How did it come to be? What lies at the bottom? Countless brave individuals, known as Divers, have sought to solve these mysteries of the Abyss, fearlessly descending into its darkest realms. The best and bravest of the Divers, the White Whistles, are hailed as legends by those who remain on the surface.</p>
+              <p>Riko, daughter of the missing White Whistle Lyza the Annihilator, aspires to become like her mother and explore the furthest reaches of the Abyss. However, just a novice Red Whistle herself, she is only permitted to roam its most upper layer. Even so, Riko has a chance encounter with a mysterious robot with the appearance of an ordinary young boy. She comes to name him Reg, and he has no recollection of the events preceding his discovery. Certain that the technology to create Reg must come from deep within the Abyss, the two decide to venture forth into the chasm to recover his memories and see the bottom of the great pit with their own eyes. However, they know not of the harsh reality that is the true existence of the Abyss.</p>
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Very recent anime launched two seasons ago. Great animation and graphics that potray a beautiful setting while having a ominous and mature theme.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/cowboybepop.jpg" alt="thumbnail image of cowboy bepop anime" title="cowboy bepop anime thumbnail image by Sunrise studios" /><span>Cowboy Bepop</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/cowboybepop.jpg" alt="thumbnail image of cowboy bepop anime" title="cowboy bepop anime thumbnail image by Sunrise studios" />
+        <h3>Cowboy Bepop</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/1/Cowboy_Bebop">
+              <p>n the year 2071, humanity has colonized several of the planets and moons of the solar system leaving the now uninhabitable surface of planet Earth behind. The Inter Solar System Police attempts to keep peace in the galaxy, aided in part by outlaw bounty hunters, referred to as "Cowboys." The ragtag team aboard the spaceship Bebop are two such individuals.</p>
+              <p>Mellow and carefree Spike Spiegel is balanced by his boisterous, pragmatic partner Jet Black as the pair makes a living chasing bounties and collecting rewards. Thrown off course by the addition of new members that they meet in their travels—Ein, a genetically engineered, highly intelligent Welsh Corgi; femme fatale Faye Valentine, an enigmatic trickster with memory loss; and the strange computer whiz kid Edward Wong—the crew embarks on thrilling adventures that unravel each member's dark and mysterious past little by little.</p>
+              <p>Well-balanced with high density action and light-hearted comedy, Cowboy Bebop is a space Western classic and an homage to the smooth and improvised music it is named after.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>The first anime that I unwillingly jumped into due to my stereotypical view that old animes had subpar graphics but came out of overwhelmingly satisfied. A timeless classic that made its name with its western pop culture references.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/actionadventure/hunterxhunter.jpg" alt="thumbnail image of hunterxhunter anime" title="hunterxhunter by Madhouse studios" /><span>HunterxHunter</span></div>
+      <div class="genreoverlay">
+        <img src="images/actionadventure/hunterxhunter.jpg" alt="thumbnail image of hunterxhunter anime" title="hunterxhunter by Madhouse studios" />
+        <h3>HunterXHunter</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011?q=hunter">
+              <p>Hunter x Hunter is set in a world where Hunters exist to perform all manner of dangerous tasks like capturing criminals and bravely searching for lost treasures in uncharted territories. Twelve-year-old Gon Freecss is determined to become the best Hunter possible in hopes of finding his father, who was a Hunter himself and had long ago abandoned his young son. However, Gon soon realizes the path to achieving his goals is far more challenging than he could have ever imagined.</p>
+              <p>Along the way to becoming an official Hunter, Gon befriends the lively doctor-in-training Leorio, vengeful Kurapika, and rebellious ex-assassin Killua. To attain their own goals and desires, together the four of them take the Hunter Exam, notorious for its low success rate and high probability of death. Throughout their journey, Gon and his friends embark on an adventure that puts them through many hardships and struggles. They will meet a plethora of monsters, creatures, and characters—all while learning what being a Hunter truly means.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>The first long anime I watched (100+ episodes) not counting pokemon that I really liked. The story is only half-concluded due to the author's health reasons but it is still an amazing adventure anime.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+    </section>
+
+    <section id="mecha">
+      <h2>Mecha Anime</h2>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/codegeass.jpg" alt="code geass anime thumbnail image" title="code geass thumbnail image by caramellsa from https://www.zerochan.net/122948" /><span>Code Geass</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/codegeass.jpg" alt="code geass anime thumbnail image" title="code geass thumbnail image by caramellsa from https://www.zerochan.net/122948" />
+        <h3>Code Geass (seasons 1 &amp; 2)</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis (season 1)</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/1575/Code_Geass__Hangyaku_no_Lelouch">
+              <p>In the year 2010, the Holy Empire of Britannia is establishing itself as a dominant military nation, starting with the conquest of Japan. Renamed to Area 11 after its swift defeat, Japan has seen significant resistance against these tyrants in an attempt to regain independence.</p>
+              <p>Lelouch Lamperouge, exiled prince of Britannia, unfortunately finds himself caught in a crossfire between the two nations' armed forces. He is able to escape, however, thanks to the timely appearance of a mysterious girl named C.C., who bestows upon him Geass, the "Power of Kings." Realizing the vast potential of his newfound "power of absolute obedience," Lelouch embarks upon a perilous journey as the masked vigilante known as Zero, leading a merciless onslaught against Britannia in order to get revenge once and for all.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Great anime featuring an almost omnipotent protagonist on a course of world domination.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/neongenesis.jpg" alt="neon gensis evangelion anime thumbnail image" title="neon gensis evangelion anime thumbnail image by CGCposters" /><span>Neon Genesis Evangelion</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/neongenesis.jpg" alt="neon gensis evangelion anime thumbnail image" title="neon gensis evangelion anime thumbnail image by CGCposters" />
+        <h3>Neon Genesis Evangelion</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/30/Neon_Genesis_Evangelion?q=neon">
+              <p>In the year 2015, the world stands on the brink of destruction. Humanity's last hope lies in the hands of Nerv, a special agency under the United Nations, and their Evangelions, giant machines capable of defeating the Angels who herald Earth's ruin. Gendou Ikari, head of the organization, seeks compatible pilots who can synchronize with the Evangelions and realize their true potential. Aiding in this defensive endeavor are talented personnel Misato Katsuragi, Head of Tactical Operations, and Ritsuko Akagi, Chief Scientist.</p>
+              <p>Face to face with his father for the first time in years, 14-year-old Shinji Ikari's average life is irreversibly changed when he is whisked away into the depths of Nerv, and into a harrowing new destiny—he must become the pilot of Evangelion Unit-01 with the fate of mankind on his shoulders.</p>
+              <p>Written by Hideaki Anno, Neon Genesis Evangelion is a heroic tale of a young boy who will become a legend. But as this psychological drama unfolds, ancient secrets beneath the big picture begin to bubble to the surface...</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>A classic masterpiece that will either leave you mindblown or looking for answers to its controversial plot.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/tengen.jpg" alt="tengen toppa gurren lagan anime thumbnail image" title="tengen toppa gurren lagan anime thumbnail image by Gainax studious" /><span>Tengen Toppa Gurren Lagan</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/tengen.jpg" alt="tengen toppa gurren lagan anime thumbnail image" title="tengen toppa gurren lagan anime thumbnail image by Gainax studious" />
+        <h3>Tengen Toppa Gurren Lagan</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/2001/Tengen_Toppa_Gurren_Lagann">
+              <p>Simon and Kamina were born and raised in a deep, underground village, hidden from the fabled surface. Kamina is a free-spirited loose cannon bent on making a name for himself, while Simon is a timid young boy with no real aspirations. One day while excavating the earth, Simon stumbles upon a mysterious object that turns out to be the ignition key to an ancient artifact of war, which the duo dubs Lagann. Using their new weapon, Simon and Kamina fend off a surprise attack from the surface with the help of Yoko Littner, a hot-blooded redhead wielding a massive gun who wanders the world above.</p>
+              <p>In the aftermath of the battle, the sky is now in plain view, prompting Simon and Kamina to set off on a journey alongside Yoko to explore the wastelands of the surface. Soon, they join the fight against the "Beastmen," humanoid creatures that terrorize the remnants of humanity in powerful robots called "Gunmen." Although they face some challenges and setbacks, the trio bravely fights these new enemies alongside other survivors to reclaim the surface, while slowly unraveling a galaxy-sized mystery.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Starting off with a relatively simple yet alluring plot, it slowly reveals the its depths.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/gundam00.jpg" alt="gundam 00 thumbnail image" title="gundam00 anime thumbnail image by Sunrise studious" /><span>Gundam00</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/gundam00.jpg" alt="gundam 00 thumbnail image" title="gundam00 anime thumbnail image by Sunrise studious" />
+        <h3>Gundam00 (seasons 1 &amp; 2)</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/2581/Mobile_Suit_Gundam_00?q=gundam">
+              <p>n the distant future, mankind's dependence on fossil fuels will lead to their complete depletion, an energy crisis unlike anything the world witnessed. Out of retaliation and fear, humanity began focusing at an alternative source of energy: solar power. Different nations have united together to form three major factions—the Union of Solar Energy and Free Nations, the Advanced European Union, and the Human Reform League. Each of these sectors has access to a solar power generator, which gives them limitless energy.</p>
+              <p>As a result, countries that were once dependent on the sale of fossil fuels are now plunged in poverty, leading to years of warfare and internal strife over the control of solar energy. Amid this chaos, an unknown paramilitary organization appeared identifying themselves as "Celestial Being," aspire to end all warfare through armed intervention by using mysterious and technologically advanced Mobile Suits known as Gundams.</p>
+              <p>Mobile Suit Gundam 00 follows the story of Celestial Being's Gundam Meisters Setsuna F. Seiei, Lockon Stratos, Allelujah Haptism, and Tieria Erde. These four dive into the devastating battle between the three superpowers to accomplish their goal of changing the world.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>One of the more recent additions to the Gundam franchise, the plot goes off with a slow start but ends with a bang</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/ghostsac.jpg" alt="Ghost in the Shell: stand alone complex anime thumbnail image" title="Ghost in the Shell: stand alone complex anime thumbnail image by Production I.G." /><span>Ghost in the Shell</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/ghostsac.jpg" alt="Ghost in the Shell: stand alone complex anime thumbnail image" title="Ghost in the Shell: stand alone complex anime thumbnail image by Production I.G." />
+        <h3>Ghost in the shell: stand alone complex 1st &amp; 2nd GIG</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/467/Ghost_in_the_Shell__Stand_Alone_Complex?q=ghost%20in">
+              <p>In the not so distant future, mankind has advanced to a state where complete body transplants from flesh to machine is possible. This allows for great increases in both physical and cybernetic prowess and blurring the lines between the two worlds. However, criminals can also make full use of such technology, leading to new and sometimes, very dangerous crimes. In response to such innovative new methods, the Japanese Government has established Section 9, an independently operating police unit which deals with such highly sensitive crimes.</p>
+              <p>Led by Daisuke Aramaki and Motoko Kusanagi, Section 9 deals with such crimes over the entire social spectrum, usually with success. However, when faced with a new A level hacker nicknamed "The Laughing Man," the team is thrown into a dangerous cat and mouse game, following the hacker's trail as it leaves its mark on Japan.</p>
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>A collection of stand alone(individual) and complex (plot) episodes of a government anti-cybercrime group tackling crimes in a world where brain cybernization has become possible. Features great introduction music and will keep you hooked despite its 90's era animation.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/mecha/gundamseed.jpg" alt="Gundam Seed anime thumbnail image" title="Gundam Seed anime thumbnail image by Sunrise Studious" /><span>Gundam Seed</span></div>
+      <div class="genreoverlay">
+        <img src="images/mecha/gundamseed.jpg" alt="Gundam Seed anime thumbnail image" title="Gundam Seed anime thumbnail image by Sunrise Studious" />
+        <h3>Gundam Seed &nbsp; Seed:Destiny</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/93/Mobile_Suit_Gundam_SEED">
+              <p>C.E. 71: In the midst of war between the Naturals (OMNI) and Coordinators (ZAFT), a unit from ZAFT is dispatched to hijack the Earth Alliance's newly developed mobile suits on the neutral colony of Heliopolis. Orb Civilian Coordinator Kira Yamato attends the technical college on Heliopolis. After ZAFT hijacks 4 of the 5 mobile suits, Kira stumbles upon the last one, Strike, forced to pilot it to save his and his friend's lives. During this confusion, Kira also reunites with his childhood Coordinator friend, Athrun Zala, who ironically turns out to be a ZAFT soldier and one of the hijackers at Heliopolis. Having control of Strike, Kira joins the Earth Alliance boarding the ship known as Archangel, to protect his friends while despairing over becoming the enemy of his childhood friend and people.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>One the most popular Gundam franchises despite its bad reviews</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+    </section>
+
+    <section id="romance" class="genres">
+
+      <h2>Slice of life / Romance Anime</h2>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/angelbeats.jpg" alt="angel beats anime thumbnail image" title="angelbeats thumbnail image by VisualArt's/Key" /><span>AngelBeats!</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/angelbeats.jpg" alt="angel beats thumbnail image" title="angelbeats thumbnail image by VisualArt's/Key" />
+        <h3>AngelBeats!</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/6547/Angel_Beats">
+              <p>Otonashi awakens only to learn he is dead. A rifle-toting girl named Yuri explains that they are in the afterlife, and Otonashi realizes the only thing he can remember about himself is his name. Yuri tells him that she leads the Shinda Sekai Sensen (Afterlife Battlefront) and wages war against a girl named Tenshi. Unable to believe Yuri's claims that Tenshi is evil, Otonashi attempts to speak with her, but the encounter doesn't go as he intended.</p>
+              <p>Otonashi decides to join the SSS and battle Tenshi, but he finds himself oddly drawn to her. While trying to regain his memories and understand Tenshi, he gradually unravels the mysteries of the afterlife.</p>
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>3rd romance anime I watched. Hard to describe this one without giving spoilers.</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/clannad.jpg" alt="clanand afterstory thumbnail image" title="clannad afterstory thumbnail image by Manga Entertainment" /><span>Clannad</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/clannad.jpg" alt="clanand afterstory thumbnail image" title="clannad afterstory thumbnail image by Manga Entertainment" />
+        <h3>Clannad &amp; Clannad:Afterstory</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis (first season)</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/2167/Clannad">
+              <p>Tomoya Okazaki is a delinquent who finds life dull and believes he'll never amount to anything. Along with his friend Youhei Sunohara, he skips school and plans to waste his high school days away.</p>
+              <p>One day while walking to school, Tomoya passes a young girl muttering quietly to herself. Without warning she exclaims "Anpan!" (a popular Japanese food) which catches Tomoya's attention. He soon discovers the girl's name is Nagisa Furukawa and that she exclaims things she likes in order to motivate herself. Nagisa claims they are now friends, but Tomoya walks away passing the encounter off as nothing.</p>
+              <p>However, Tomoya finds he is noticing Nagisa more and more around school. Eventually he concedes and befriends her. Tomoya learns Nagisa has been held back a year due to a severe illness and that her dream is to revive the school's drama club. Claiming he has nothing better to do, he decides to help her achieve this goal along with the help of four other girls.</p>
+              <p>As Tomoya spends more time with the girls, he learns more about them and their problems. As he attempts to help each girl overcome her respective obstacle, he begins to realize life isn't as dull as he once thought.</p>
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>2nd romance anime I watched including clannad and clannad:afterstory. Not advised to read the synopsis for the second season till you finished the first. Simply a masterpiece. </p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/yourname.png" alt="your name anime thumbnail image" title="your name anime thumbnail image by unknown" /><span>Your Name</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/yourname.png" alt="your name anime thumbnail image" title="your name anime thumbnail image by unknown" />
+        <h3>Kimi no Na wa</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/32281/Kimi_no_Na_wa?q=your%20name">
+              <p>Mitsuha Miyamizu, a high school girl, yearns to live the life of a boy in the bustling city of Tokyo—a dream that stands in stark contrast to her present life in the countryside. Meanwhile in the city, Taki Tachibana lives a busy life as a high school student while juggling his part-time job and hopes for a future in architecture.</p>
+              <p>One day, Mitsuha awakens in a room that is not her own and suddenly finds herself living the dream life in Tokyo—but in Taki's body! Elsewhere, Taki finds himself living Mitsuha's life in the humble countryside. In pursuit of an answer to this strange phenomenon, they begin to search for one another.</p>
+              <p>Kimi no Na wa. revolves around Mitsuha and Taki's actions, which begin to have a dramatic impact on each other's lives, weaving them into a fabric held together by fate and circumstance.</p>
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>An sweet anime movie reminiscent of adolescence that simply cannot be missed</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/toradora.jpg" alt="toradora anime thumbnail image" title="toradora anime thumbnail image by J.C.staff" /><span>Toradora!</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/toradora.jpg" alt="toradora anime thumbnail image" title="toradora anime thumbnail image by J.C.staff" />
+        <h3>Toradora!</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/4224/Toradora">
+              <p>Ryuuji Takasu is a gentle high school student with a love for housework; but in contrast to his kind nature, he has an intimidating face that often gets him labeled as a delinquent. On the other hand is Taiga Aisaka, a small, doll-like student, who is anything but a cute and fragile girl. Equipped with a wooden katana and feisty personality, Taiga is known throughout the school as the "Palmtop Tiger."</p>
+              <p>One day, an embarrassing mistake causes the two students to cross paths. Ryuuji discovers that Taiga actually has a sweet side: she has a crush on the popular vice president, Yuusaku Kitamura, who happens to be his best friend. But things only get crazier when Ryuuji reveals that he has a crush on Minori Kushieda—Taiga's best friend!</p>
+              <p>Toradora! is a romantic comedy that follows this odd duo as they embark on a quest to help each other with their respective crushes, forming an unlikely alliance in the process.</p>
+
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>Sweet yet heartwrenching romance</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/shigatsu.png" alt="Your Lie in April thumbnail image" title="Your Lie in April thumbnail image by A-1 pictures" /><span>Your Lie in April</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/shigatsu.png" alt="Your Lie in April thumbnail image" title="Your Lie in April thumbnail image by A-1 pictures" />
+        <h3>Your Lie in April</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso?q=shigatsu%20wa%20">
+              <p>Music accompanies the path of the human metronome, the prodigious pianist Kousei Arima. But after the passing of his mother, Saki Arima, Kousei falls into a downward spiral, rendering him unable to hear the sound of his own piano.</p>
+              <p>Two years later, Kousei still avoids the piano, leaving behind his admirers and rivals, and lives a colorless life alongside his friends Tsubaki Sawabe and Ryouta Watari. However, everything changes when he meets a beautiful violinist, Kaori Miyazono, who stirs up his world and sets him on a journey to face music again.</p>
+              <p>Based on the manga series of the same name, Shigatsu wa Kimi no Uso approaches the story of Kousei's recovery as he discovers that music is more than playing each note perfectly, and a single melody can bring in the fresh spring air of April.</p>
+
+
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>No spoilers</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+      <div class="popup" onclick="displaydahoverlay(this)"><img src="images/romance/spiceandwolf.jpg" alt="spice and wolf anime thumbnail image" title="spice and wolf anime thumbnail image by Imagin" /><span>Spice and Wolf</span></div>
+      <div class="genreoverlay">
+        <img src="images/romance/spiceandwolf.jpg" alt="spice and wolf anime thumbnail image" title="spice and wolf anime thumbnail image by Imagin" />
+        <h3>Spice and Wolf</h3>
+
+        <div class="opinion">
+          <details open>
+            <summary><h4>Synopsis (Ookami to Koushinryou)</h4></summary>
+            <blockquote cite="https://myanimelist.net/anime/2966/Ookami_to_Koushinryou?q=ookami">
+              <p>Holo is a powerful wolf deity who is celebrated and revered in the small town of Pasloe for blessing the annual harvest. Yet as years go by and the villagers become more self-sufficient, Holo, who stylizes herself as the "Wise Wolf of Yoitsu," has been reduced to a mere folk tale. When a traveling merchant named Kraft Lawrence stops at Pasloe, Holo offers to become his business partner if he eventually takes her to her northern home of Yoitsu. The savvy trader recognizes Holo's unusual ability to evaluate a person's character and accepts her proposition. Now in the possession of both sharp business skills and a charismatic negotiator, Lawrence inches closer to his goal of opening his own shop. However, as Lawrence travels the countryside with Holo in search of economic opportunities, he begins to realize that his aspirations are slowly morphing into something unexpected.</p>
+            </blockquote>
+          </details>
+          <details open>
+            <summary><h4>Me</h4></summary>
+            <p>slow paced and mature-themed anime that develops on the romnance between a merchant trader and a deity-like fox-woman</p>
+          </details>
+        </div>
+        <div onclick="changecontrast(this)" class="genrecontrast">
+          <img src="images/contrastbuttonwhite.png" alt="change contrast button" title="Contrast by useiconic.com from the Noun Project" />
+        </div>
+        <div onclick="exitdahoverlay()" class="overlayexit">
+          <img src="images/backbuttonwhite.png" alt="overlay back button" title="back by Designify.me from the Noun Project" />
+        </div>
+        <div class="animeprogressbox">
+          <span>Watched?</span>
+          <img onclick="changecheck(this)" data-checked="no" src="images/unchecked.png" alt="unchecked anime watching progress checkbox" title="just a black circle I drew using gimp" />
+        </div>
+      </div>
+
+
+    </section>
+
+    <section id="aboutme">
+      <h2>About</h2>
+
+      <div>
+        <p>Please don't flame this site if you come across it from google for its shabby content. It is by no means an adequate list of anime recommendations for a beginner.</p>
+        <p>This site was created and uploaded for evaluation purposes on coursera's <a href="https://www.coursera.org/specializations/web-design">introduction to web development course</a> offered by the University of Michigan</p>
+      </div>
+    </section>
+
+    <section id="resources">
+      <h2>Credits and Resources used</h2>
+
+      <nav>
+        <a href="https://myanimelist.net">MyAnimeList</a>
+        <a href="https://thenounproject.com/">The Noun Project</a>
+        <a href="https://www.fontsquirrel.com/fonts/raleway">Raleway fonts</a>
+        <a href="https://www.dafont.com/aesthetik-script.font">Aesthetik font</a>
+        <a href="http://www.fontspace.com/bangtoyib/bataler">Bataler font</a>
+        <a href="http://www.fontspace.com/reference-type-foundry/aspire">Aspire font</a>
+        <a href="https://byet.host">Byethost</a>
+        <a href="http://www.color-hex.com">Hex Colors</a>
+        <a href="https://www.pinterest.com/pin/550424385692615661/">君の名は b.g.</a>
+        <a href="https://itsripples.deviantart.com/art/SWORD-ART-ONLINE-SAO-Aincrad-WALLPAPER-557262509">S.A.O b.g.</a>
+        <a href="http://www.1001fonts.com/mandroid-bb-font.html">MandroidBB</a>
+        <a href="https://www.deviantart.com/art/Goblet-of-Giants-724326305">Abyss b.g.</a>
+      </nav>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      &copy; This page was created by Ang Ze Yu for a web design course.
+    </div>
+  </footer>
+
+</body>
+
+</html>
